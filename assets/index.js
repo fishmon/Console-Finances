@@ -125,5 +125,10 @@ var dateOfMaxIncrease = finances[maxIncreaseIndex + 1][0];
 
 console.log("Greatest Increase in Profit/Losses: "+  dateOfMaxIncrease + " ($"+ maxIncrease +")");
 
+var maxDecrease = Math.min.apply(null, differences);
+var maxDecreaseIndex = differences.indexOf(maxDecrease);
+var dateOfMaxDecrease = finances[maxDecreaseIndex + 1][0]; 
+
+console.log("Greatest Decrease in Profit/Losses:"+dateOfMaxDecrease+ " ($" + maxDecrease + ")");
 
 
