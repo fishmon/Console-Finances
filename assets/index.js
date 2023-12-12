@@ -118,3 +118,12 @@ var averageChange = (sum / (totalMonths - 1)).toFixed(2);
 
 console.log("Average Change:","$"+averageChange);
 
+
+var maxIncrease = Math.max.apply(null, differences);
+var maxIncreaseIndex = differences.indexOf(maxIncrease);
+var dateOfMaxIncrease = finances[maxIncreaseIndex + 1][0];
+
+console.log("Greatest Increase in Profit/Losses: "+  dateOfMaxIncrease + " ($"+ maxIncrease +")");
+
+
+
