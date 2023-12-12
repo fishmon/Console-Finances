@@ -86,9 +86,13 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+// prints the top text
 console.log("Financial Analysis\n--------------------");
+//prints the total months
 console.log("Total months :"+ finances.length);
 
+//prints the total amount / total months
 let profitLossTotal = 0; 
 let totalMonths = finances.length;         
 
@@ -99,36 +103,33 @@ for (let i = 0; i < totalMonths; i++) {
 
 console.log("Total: " +"$"+ profitLossTotal);  
 
-
-
-
-// Calculate the differences
+// Calculates the average change
 var differences = [];
 for (let i = 1; i < totalMonths; i++) {
   let difference = finances[i][1] - finances[i - 1][1];
   differences.push(difference);
 }
 
-// Calculate the average
+
 var sum = differences.reduce(function (acc, val) {
   return acc + val;
 }, 0);
 
 var averageChange = (sum / (totalMonths - 1)).toFixed(2); 
-
+//prints the average change
 console.log("Average Change:","$"+averageChange);
 
-
+// grteatest increase in P/L
 var maxIncrease = Math.max.apply(null, differences);
 var maxIncreaseIndex = differences.indexOf(maxIncrease);
 var dateOfMaxIncrease = finances[maxIncreaseIndex + 1][0];
 
 console.log("Greatest Increase in Profit/Losses: "+  dateOfMaxIncrease + " ($"+ maxIncrease +")");
-
+//Greatest decrease in P/L
 var maxDecrease = Math.min.apply(null, differences);
 var maxDecreaseIndex = differences.indexOf(maxDecrease);
 var dateOfMaxDecrease = finances[maxDecreaseIndex + 1][0]; 
 
 console.log("Greatest Decrease in Profit/Losses:"+dateOfMaxDecrease+ " ($" + maxDecrease + ")");
 
-
+//end
