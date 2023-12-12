@@ -89,4 +89,13 @@ var finances = [
 console.log("Financial Analysis\n--------------------");
 console.log("Total months :"+ finances.length);
 
+let profitLossTotal = 0; 
+let totalMonths = finances.length;         
+
+for (let i = 0; i < totalMonths; i++) {
+
+    profitLossTotal += finances[i][1];       
+}
+
+console.log("Total: " +"$"+ profitLossTotal);  
 
