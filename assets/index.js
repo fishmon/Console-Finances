@@ -99,3 +99,22 @@ for (let i = 0; i < totalMonths; i++) {
 
 console.log("Total: " +"$"+ profitLossTotal);  
 
+
+
+
+// Calculate the differences
+var differences = [];
+for (let i = 1; i < totalMonths; i++) {
+  let difference = finances[i][1] - finances[i - 1][1];
+  differences.push(difference);
+}
+
+// Calculate the average
+var sum = differences.reduce(function (acc, val) {
+  return acc + val;
+}, 0);
+
+var averageChange = (sum / (totalMonths - 1)).toFixed(2); 
+
+console.log("Average Change:","$"+averageChange);
+
